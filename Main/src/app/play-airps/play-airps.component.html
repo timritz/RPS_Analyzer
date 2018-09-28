@@ -1,0 +1,49 @@
+<div id="FullScreen" (swiperight)="return()">
+
+  <nav>
+      <!-- <img src="" alt="Menu"  id="DropDownButton"> -->
+    <ul id="DropDownList">
+      <li class="DropDownOption" (tap)="MenuHome()"><h3>Home</h3></li>
+      <li class="DropDownOption" (tap)="MenuAsk()"><h3>Ask Airps</h3></li>
+      <li class="DropDownOption" (tap)="MenuPlay()"><h3>Play Airps</h3></li>
+      <li class="DropDownOption" (tap)="MenuUpdate()"><h3>Update Airps</h3></li>
+      <!-- <li class="DropDownOption" (tap)="MenuData()"><h3>Data"</h3></li> -->
+    </ul>
+    <h1 id="Title">A.I.R.P.S.</h1>
+  </nav>
+
+
+  <div class="body">
+    <button class="responseButton" (click)="reset()">New Game</button>
+    <button class="responseButton" *ngIf="(user_rock || user_paper || user_scissors)" (click)="submit()">Submit</button>
+    <button class="responseButton" *ngIf="!(user_rock || user_paper || user_scissors)" (click)="submit()" disabled>Submit</button>
+  </div>
+
+  <div class="container" >
+    <p class="test" (click)="chooseRock('user')" [style.background-color]="rockStyle">Rock</p>
+    <p class="test" (click)="choosePaper('user')" [style.background-color]="paperStyle">Paper</p>
+    <p class="test" (click)="chooseScissors('user')" [style.background-color]="scissorsStyle">Scissors</p>
+  </div>
+  
+  <div class="container">
+    <p class="test" (click)="chooseRock('user')">&#x270a;</p>
+    <p class="test" (click)="choosePaper('user')">&#x270b;</p>
+    <p class="test" (click)="chooseScissors('user')">&#x270c;</p>
+  </div>
+
+  <div>
+    <h3><span *ngIf="result">You {{result}} the last round </span></h3>
+    <!-- <button [disabled]="user_rock" (click)="chooseRock('user')">Rock</button>
+    <button [disabled]="user_paper" (click)="choosePaper('user')">Paper</button>
+    <button [disabled]="user_scissors" (click)="chooseScissors('user')">Scissors</button> -->
+  </div>
+
+  <!-- <div style="display: inline-block;">
+    <h3>They picked</h3>
+    <button [disabled]="opp_rock" (click)="chooseRock('opp')">Rock</button>
+    <button [disabled]="opp_paper" (click)="choosePaper('opp')">Paper</button>
+    <button [disabled]="opp_scissors" (click)="chooseScissors('opp')">Scissors</button>
+  </div><br> -->
+
+
+</div>

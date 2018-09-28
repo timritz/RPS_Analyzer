@@ -1,0 +1,96 @@
+<div id="FullScreen" (swipeleft)="return()">
+
+  <nav>
+    <!-- <img src="" alt="Menu"  id="DropDownButton"> -->
+    <ul id="DropDownList">
+      <li class="DropDownOption" (tap)="MenuHome()"><h3>Home</h3></li>
+      <li class="DropDownOption" (tap)="MenuAsk()"><h3>Ask Airps</h3></li>
+      <li class="DropDownOption" (tap)="MenuPlay()"><h3>Play Airps</h3></li>
+      <li class="DropDownOption" (tap)="MenuUpdate()"><h3>Update Airps</h3></li>
+      <!-- <li class="DropDownOption" (tap)="MenuData()"><h3>Data"</h3></li> -->
+    </ul>
+    <h1 id="Title">A.I.R.P.S.</h1>
+  </nav>
+
+  <div class="body" *ngIf="!started">
+    <button id="startButton" class="bigButton"(tap)="start()">Start</button>
+  </div>
+
+  <div class="body" *ngIf="started">
+    <div>
+      <button  class="bigButton" (click)="reset()">New Game</button>   
+      <button class="bigButton" (click)="analyzeOptions()">Ask Airps:</button>
+      
+    </div>
+
+    <div class="prompt" *ngIf="turnBeginning">
+      <h3>You Chose????</h3>
+      <!-- <button (click)="pickedRock()">Rock</button>
+      <button (click)="pickedPaper()">Paper</button>
+      <button (click)="pickedScissors()">Scissors</button> -->
+    </div>
+
+    <div class="prompt" *ngIf="!turnBeginning">
+      <h3>Did you win?</h3>
+      <!-- <button (click)="won()">I won</button>
+      <button (click)="lost()">I lost</button>
+      <button (click)="tied()">I tied</button> -->
+    </div>
+
+    <div *ngIf="!turnBeginning">
+        <button class="test responseButton" (click)="won()">Won</button>
+        <button class="test responseButton" (click)="lost()">Lost</button>
+        <button class="test responseButton" (click)="tied()">Tied</button>
+    </div>
+
+    <div class="container" *ngIf="turnBeginning">
+      <p class="test" (click)="pickedRock()" [style.background-color]="rockStyle">Rock</p>
+      <p class="test" (click)="pickedPaper()" [style.background-color]="paperStyle">Paper</p>
+      <p class="test" (click)="pickedScissors()" [style.background-color]="scissorsStyle">Scissors</p>
+    </div>
+  
+    <div class="container" *ngIf="turnBeginning">
+      <p class="test" (click)="pickedRock()">&#x270a;</p>
+      <p class="test" (click)="pickedPaper()">&#x270b;</p>
+      <p class="test" (click)="pickedScissors()">&#x270c;</p>
+    </div>
+
+    <div style="text-align: center">
+      <span *ngIf="!bestOption">I don't know, follow your heart</span>
+    </div>
+
+
+    <!-- <table *ngIf="currentAction">
+      <thead>
+        <th>Action</th>
+        <th>Wins</th>
+        <th>Losses</th>
+        <th>Ties</th>
+      </thead>
+      <tr *ngIf="currentAction.rock">
+        <td>Rock</td>
+        <td>{{currentAction.rock.wins}}</td>
+        <td>{{currentAction.rock.losses}}</td>
+        <td>{{currentAction.rock.ties}}</td>
+      </tr>
+      <tr *ngIf="currentAction.paper">
+        <td>Paper</td>
+        <td>{{currentAction.paper.wins}}</td>
+        <td>{{currentAction.paper.losses}}</td>
+        <td>{{currentAction.paper.ties}}</td>
+      </tr>
+      <tr *ngIf="currentAction.scissors">
+        <td>Scissors</td>
+        <td>{{currentAction.scissors.wins}}</td>
+        <td>{{currentAction.scissors.losses}}</td>
+        <td>{{currentAction.scissors.ties}}</td>
+      </tr>
+    </table> -->
+  </div>
+</div>
+
+
+
+
+
+

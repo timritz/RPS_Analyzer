@@ -1,0 +1,29 @@
+<p>Current Level: </p>
+<table>
+  <thead>
+    <th>Action</th>
+    <th>Wins</th>
+    <th>Losses</th>
+    <th>Ties</th>
+  </thead>
+  <tr *ngIf="currentAction.rock">
+    <td>Rock</td>
+    <td>{{currentAction.rock.wins}}</td>
+    <td>{{currentAction.rock.losses}}</td>
+    <td>{{currentAction.rock.ties}}</td>
+  </tr>
+  <tr *ngIf="currentAction.paper">
+    <td>Paper</td>
+    <td>{{currentAction.paper.wins}}</td>
+    <td>{{currentAction.paper.losses}}</td>
+    <td>{{currentAction.paper.ties}}</td>
+  </tr>
+  <tr *ngIf="currentAction.scissors">
+    <td>Scissors</td>
+    <td>{{currentAction.scissors.wins}}</td>
+    <td>{{currentAction.scissors.losses}}</td>
+    <td>{{currentAction.scissors.ties}}</td>
+  </tr>
+</table>
+
+<button (tap)="return()">Return</button>

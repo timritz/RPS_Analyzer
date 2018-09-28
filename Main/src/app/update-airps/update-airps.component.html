@@ -1,0 +1,68 @@
+<div id="FullScreen" (swiperight)="return()">
+
+  <nav>
+      <!-- <img src="" alt="Menu"  id="DropDownButton"> -->
+    <ul id="DropDownList">
+      <li class="DropDownOption" (tap)="MenuHome()"><h3>Home</h3></li>
+      <li class="DropDownOption" (tap)="MenuAsk()"><h3>Ask Airps</h3></li>
+      <li class="DropDownOption" (tap)="MenuPlay()"><h3>Play Airps</h3></li>
+      <li class="DropDownOption" (tap)="MenuUpdate()"><h3>Update Airps</h3></li>
+      <!-- <li class="DropDownOption" (tap)="MenuData()"><h3>Data"</h3></li> -->
+    </ul>
+    <h1 id="Title">A.I.R.P.S.</h1>
+  </nav>
+
+  <h1 style="text-align: center">Document a Game</h1>
+  
+
+  <div>
+    <button class="responseButton" (click)="reset()">New Game</button>
+    <button class="responseButton" (tap)="return()">Return</button>
+    <button class="responseButton" *ngIf="(userPicked) && (oppPicked)" (click)="submit()">Submit</button>
+    <button class="responseButton" *ngIf="!(userPicked) || !(oppPicked)" (click)="submit()" disabled>Submit</button>
+  </div>
+
+
+  <div>
+    <!-- <div style="display: inline-block;">
+      <h3>You picked</h3>
+      <button [disabled]="user_rock" (click)="chooseRock('user')">Rock</button>
+      <button [disabled]="user_paper" (click)="choosePaper('user')">Paper</button>
+      <button [disabled]="user_scissors" (click)="chooseScissors('user')">Scissors</button>
+    </div>
+    <div style="display: inline-block;">
+      <h3>They picked</h3>
+      <button [disabled]="opp_rock" (click)="chooseRock('opp')">Rock</button>
+      <button [disabled]="opp_paper" (click)="choosePaper('opp')">Paper</button>
+      <button [disabled]="opp_scissors" (click)="chooseScissors('opp')">Scissors</button>
+    </div><br> -->
+
+
+    <h3 style="text-align: center; border: 1px solid black">Player 1 picked</h3>
+    <div class="container" >
+      <p class="test" (click)="chooseRock('user1')" [style.background-color]="rockStyle1">Rock</p>
+      <p class="test" (click)="choosePaper('user1')" [style.background-color]="paperStyle1">Paper</p>
+      <p class="test" (click)="chooseScissors('user1')" [style.background-color]="scissorsStyle1">Scissors</p>
+    </div>
+      
+    <div class="container">
+      <p class="test" (click)="chooseRock('user1')">&#x270a;</p>
+      <p class="test" (click)="choosePaper('user1')">&#x270b;</p>
+      <p class="test" (click)="chooseScissors('user1')">&#x270c;</p>
+    </div>
+
+    <h3  style="text-align: center; border: 1px solid black">Player 2 picked</h3>
+    <div class="container" >
+      <p class="test" (click)="chooseRock('user2')" [style.background-color]="rockStyle2">Rock</p>
+      <p class="test" (click)="choosePaper('user2')" [style.background-color]="paperStyle2">Paper</p>
+      <p class="test" (click)="chooseScissors('user2')" [style.background-color]="scissorsStyle2">Scissors</p>
+    </div>
+    
+    <div class="container">
+      <p class="test" (click)="chooseRock('user2')">&#x270a;</p>
+      <p class="test" (click)="choosePaper('user2')">&#x270b;</p>
+      <p class="test" (click)="chooseScissors('user2')">&#x270c;</p>
+    </div>
+  </div>
+
+

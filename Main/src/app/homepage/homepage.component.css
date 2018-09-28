@@ -1,0 +1,96 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    text-align: 0px;
+}
+
+@media only screen and (max-width: 600px){
+    #Title {
+        color: Black
+    }
+
+    #testDiv {
+        background-color: lightblue;
+    }
+    
+    #FullScreen{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        min-height: 100%;
+        background-color: #bfc6ca;
+    }
+    
+    .guide{
+        display: inline-block;
+        width: 49.5%;
+    }
+    
+    .test{
+        width: 33%;
+        display: inline-block;
+        outline: 1px solid black;
+        font-size: 30px;
+        font-weight: bolder;
+        color: black;
+        margin: 0px;
+        padding: 0px;
+        text-align: center;
+    }
+    
+    .otherButton{
+        text-align: center;
+        width: 40%;
+        margin: 0px 5%;
+        
+    }
+    
+    #DropDownButton{
+        display: inline-block;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    .DropDownOption{
+        text-align: center;
+
+    }
+    #Title{
+        display: inline-block;
+        text-align: center;
+        background-color: darkslategrey;
+        border-radius: 5px;
+        width: 33%;
+        margin: 5% 33%;
+    
+    }
+    
+    #description{
+        text-align: center;
+        margin-bottom: 5%;
+    }
+
+    #DropDownList {
+        position: absolute;
+        top: 10%;
+        left: 5%;
+        /* background-color: rbga(192,192,192,1); */
+        background-color: rgba(192,192,192,.85);
+        outline: 1px solid black;
+        color: white;
+        display: none;
+        width: 90%;
+
+        list-style: none;
+
+        
+    }
+}
+@media only screen and (min-width: 600px){
+    #Title {
+        color: Blue
+    }
+}
+
+
