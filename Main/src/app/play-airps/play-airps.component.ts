@@ -225,24 +225,5 @@ export class PlayAirpsComponent implements OnInit {
     this._router.navigate(['/'])
   }
 
-  MenuHome(){
-    $("#DropDownList").slideUp()
-    this._router.navigate(['/'])
-  }
-  MenuAsk(){
-    $("#DropDownList").slideUp()
-    this._router.navigate(['/ask'])
-  }
-  MenuPlay(){
-    $("#DropDownList").slideUp()
-    this._router.navigate(['/play'])
-  }
-  MenuUpdate(){
-    $("#DropDownList").slideUp()
-    this._router.navigate(['/update'])
-  }
-  MenuData(){
-    $("#DropDownList").slideUp()
-    this._router.navigate(['/stats'])
-  }
+  
 }

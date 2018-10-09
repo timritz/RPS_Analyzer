@@ -1,119 +1,257 @@
+@media only screen and (max-width: 600px){
 /* #FullScreen{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    min-height: 100%;
-    background-color: #41799b;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        min-height: 100%;
+        background-color: #41799b;
 
-} */
+    } */
 
-#FullScreen{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    min-height: 100%;
-    background-color: #41799b;
-    /* background-image: linear-gradient(-90deg, #41799B, #224F6A) */
+    #FullScreen{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        min-height: 100%;
+        background-color: #41799b;
+        /* background-image: linear-gradient(-90deg, #41799B, #224F6A) */
+    }
+
+    .guide{
+        display: inline-block;
+        width: 49.5%;
+    }
+
+    .test{
+        width: 33%;
+        display: inline-block;
+        /* outline: 1px solid black; */
+        font-size: 30px;
+        font-weight: bolder;
+        color: black;
+        margin: 0px;
+        padding: 0px;
+        text-align: center;
+    }
+
+    .otherButton{
+        text-align: center;
+        width: 40%;
+        margin: 0px 5%;
+        
+    }
+
+    #DropDownButton{
+        display: inline-block;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    .DropDownOption{
+        text-align: center;
+    }
+    #Title{
+        display: inline-block;
+        text-align: center;
+        background-color: darkslategrey;
+        border-radius: 5px;
+        width: 33%;
+        margin: 5% 33%;
+
+    }
+
+    #description{
+        text-align: center;
+        margin-bottom: 5%;
+    }
+
+    #DropDownList {
+        position: absolute;
+        top: 10%;
+        left: 5%;
+        /* background-color: rbga(192,192,192,1); */
+        background-color: rgba(192,192,192,.85);
+        outline: 1px solid black;
+        color: white;
+        display: none;
+        width: 90%;
+        list-style: none;
+        
+    }
+
+    #startButton{
+        display: inline-block;
+        width: 40%;
+        text-align: center;
+        font-size: x-large;
+        margin: 10% 30%;
+    }
+
+    .body{
+        text-align: center;
+        margin-bottom: 5%;
+    }
+
+    .bigButton{
+        width: 20%;
+        margin: 0px 15%;
+        margin-top: 5%;
+        background-color: darkslategray;
+        border-radius: 5px;
+        font-size: larger;
+        padding: 1%;
+    }
+
+    .responseButton{
+        width: 30%;
+        margin: 0px 1.5%;
+        margin-top: 5%;
+        background-color: darkslategray;
+        border-radius: 5px;
+        font-size: larger;
+        padding: 1%;
+    }
+
+    .prompt{
+        margin: 5% 0px;
+        
+    }
 }
+@media only screen and (min-width: 600px){
+    * {
+        outline: 1px dotted red;
+    }
+    #Title {
+        color: Black
+    }
 
-.guide{
-    display: inline-block;
-    width: 49.5%;
-}
-
-.test{
-    width: 33%;
-    display: inline-block;
-    /* outline: 1px solid black; */
-    font-size: 30px;
-    font-weight: bolder;
-    color: black;
-    margin: 0px;
-    padding: 0px;
-    text-align: center;
-}
-
-.otherButton{
-    text-align: center;
-    width: 40%;
-    margin: 0px 5%;
+    #testDiv {
+        background-color: lightblue;
+    }
     
-}
-
-#DropDownButton{
-    display: inline-block;
-    position: absolute;
-    top: 0;
-    left: 0;
-}
-.DropDownOption{
-    text-align: center;
-}
-#Title{
-    display: inline-block;
-    text-align: center;
-    background-color: darkslategrey;
-    border-radius: 5px;
-    width: 33%;
-    margin: 5% 33%;
-
-}
-
-#description{
-    text-align: center;
-    margin-bottom: 5%;
-}
-
-#DropDownList {
-    position: absolute;
-    top: 10%;
-    left: 5%;
-    /* background-color: rbga(192,192,192,1); */
-    background-color: rgba(192,192,192,.85);
-    outline: 1px solid black;
-    color: white;
-    display: none;
-    width: 90%;
-    list-style: none;
+    #FullScreen{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        min-height: 100%;
+        background-color: #bfc6ca;
+        padding: 5%;
+    }
     
-}
-
-#startButton{
-    display: inline-block;
-    width: 40%;
-    text-align: center;
-    font-size: x-large;
-    margin: 10% 30%;
-}
-
-.body{
-    text-align: center;
-    margin-bottom: 5%;
-}
-
-.bigButton{
-    width: 20%;
-    margin: 0px 15%;
-    margin-top: 5%;
-    background-color: darkslategray;
-    border-radius: 5px;
-    font-size: larger;
-    padding: 1%;
-}
-
-.responseButton{
-    width: 30%;
-    margin: 0px 1.5%;
-    margin-top: 5%;
-    background-color: darkslategray;
-    border-radius: 5px;
-    font-size: larger;
-    padding: 1%;
-}
-
-.prompt{
-    margin: 5% 0px;
+    .guide{
+        display: inline-block;
+        width: 49.5%;
+    }
     
+
+    
+    .otherButton{
+        text-align: center;
+        width: 40%;
+        margin: 0px 2.5%;
+        margin-top: 5%;
+        
+    }
+    
+    #DropDownButton{
+        display: inline-block;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    .DropDownOption{
+        text-align: center;
+
+    }
+
+    #DropDownList {
+        position: absolute;
+        top: 25%;
+        left: 25%;
+        /* background-color: rbga(192,192,192,1); */
+
+        /* display: relative; */
+        background-color: rgba(192,192,192,.85);
+        outline: 1px solid black;
+        color: white;
+        display: none;
+        width: 30%;
+
+        list-style: none;
+
+        
+    }
+
+    #Title{
+        display: block;
+        text-align: center;
+        background-color: darkslategrey;
+        border-radius: 50%;
+        width: 100%;
+        padding: 45% 0px;
+        /* padding-bottom: 90%; */
+    }
+    
+    #description{
+        display: inline-block;
+        text-align: center;
+        margin-bottom: 5%;
+        width: 60%;        
+    }
+    #description p{
+        font-size: larger;
+        margin: 2% 0px;
+    }
+
+    nav{
+        /* display: table; */
+        display: inline-block;
+        vertical-align: top;
+        margin-right: 10%;
+        width: 20%;
+        
+    }
+
+    .body{
+        text-align: center;
+        margin-bottom: 5%;
+        width: 90%;
+    }
+
+    .bigButton{
+        width: 10%;
+        margin: 0px 5%;
+        margin-top: 5%;
+        background-color: darkslategray;
+        border-radius: 5px;
+        font-size: larger;
+        padding: 1%;
+    }
+
+    .responseButton{
+        width: 30%;
+        margin: 0px 5%;
+        margin-top: 5%;
+        background-color: darkslategray;
+        border-radius: 5px;
+        font-size: larger;
+        padding: 1%;
+    }
+
+    .test{
+        width: 30%;
+        display: inline-block;
+        outline: 1px solid black;
+        font-size: 30px;
+        font-weight: bolder;
+        color: black;
+        margin: 0px;
+        padding: 0px;
+        text-align: center;
+    }
+    
+
 }
