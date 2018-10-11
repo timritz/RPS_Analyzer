@@ -88,9 +88,9 @@
     }
 }
 @media only screen and (min-width: 600px){
-    * {
+    /* * {
         outline: 1px dotted red;
-    }
+    } */
     #Title {
         color: Black
     }

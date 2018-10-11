@@ -38,14 +38,14 @@ export class PlayAirpsComponent implements OnInit {
   ngOnInit() {
     this.getData(this.startId)
 
-    console.log("should be listening")
+    // console.log("should be listening")
     $(document).ready(function(){
-      console.log("Listening")
+      // console.log("Listening")
 
      
 
       $("#Title").click(function(){
-        console.log("clicked dropdown")
+        // console.log("clicked dropdown")
         $("#DropDownList").slideToggle()
       })
       
@@ -107,29 +107,29 @@ export class PlayAirpsComponent implements OnInit {
       }
     }
 
-    console.log(result, " with ", option)
-    console.log("inside option", this.currentAction[option])
-    console.log("inside result", this.currentAction[option][result])
+    // console.log(result, " with ", option)
+    // console.log("inside option", this.currentAction[option])
+    // console.log("inside result", this.currentAction[option][result])
 
     this.result = result
 
     if(this.currentAction[option][result]){
       const tempObservable = this._httpService.updateAction(this.currentAction._id, this.currentAction)
       tempObservable.subscribe(data=>{
-        console.log("updated current schema")
+        // console.log("updated current schema")
         this.getData(this.currentAction[option][result])
       })
     }else {
       const tempObservable = this._httpService.newAction()
       tempObservable.subscribe(data1=>{
-        console.log("made new action")
-        console.log('data1', data1)
+        // console.log("made new action")
+        // console.log('data1', data1)
         this.currentAction[option][result] = data1["_id"]
-        console.log('to be updated', this.currentAction)
+        // console.log('to be updated', this.currentAction)
         const tempObs2 = this._httpService.updateAction(this.currentAction._id, this.currentAction)
         tempObs2.subscribe(data2=>{
-          console.log("added action to parent")
-          console.log("data2", data2)
+          // console.log("added action to parent")
+          // console.log("data2", data2)
           this.getData(data1['_id'])
         })
       })
@@ -180,13 +180,13 @@ export class PlayAirpsComponent implements OnInit {
   }
 
   submit(){
-    console.log("Got to submit")
+    // console.log("Got to submit")
     this.resetbuttons();
     this.getNext(this.UserChoice, this.CompChoice)
   }
 
   reset(){
-    console.log("Got to reset")
+    // console.log("Got to reset")
     this.resetbuttons()
     this.getData(this.startId)
     this.result = null;
@@ -210,19 +210,40 @@ export class PlayAirpsComponent implements OnInit {
     const ScissorsSum = this.currentAction.scissors.wins + this.currentAction.scissors.losses + this.currentAction.scissors.ties
 
 
-    console.log("Are we random? ", (RockSum == 0 || PaperSum ==0 || ScissorsSum == 0))
+    // console.log("Are we random? ", (RockSum == 0 || PaperSum ==0 || ScissorsSum == 0))
     if((RockSum == 0 || PaperSum ==0 || ScissorsSum == 0)){
-      console.log("Airps is picking randomly")
+      // console.log("Airps is picking randomly")
       const randomIndex = Math.floor(Math.random()*3);
       this.CompChoice = options[randomIndex][0]
-      console.log("index", randomIndex)
+      // console.log("index", randomIndex)
     }
 
-    console.log("Airps will throw " + this.CompChoice)
+    // console.log("Airps will throw " + this.CompChoice)
   }
 
   return(){
     this._router.navigate(['/'])
+  }
+
+  MenuHome(){
+    $("#DropDownList").slideUp()
+    this._router.navigate(['/'])
+  }
+  MenuAsk(){
+    $("#DropDownList").slideUp()
+    this._router.navigate(['/ask'])
+  }
+  MenuPlay(){
+    $("#DropDownList").slideUp()
+    this._router.navigate(['/play'])
+  }
+  MenuUpdate(){
+    $("#DropDownList").slideUp()
+    this._router.navigate(['/update'])
+  }
+  MenuData(){
+    $("#DropDownList").slideUp()
+    this._router.navigate(['/stats'])
   }
 
   

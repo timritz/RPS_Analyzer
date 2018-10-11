@@ -32,14 +32,14 @@ export class UpdateAirpsComponent implements OnInit {
   ngOnInit() {
     this.getData("5bab9fe1631c7a4950085d9f")
 
-    console.log("should be listening")
+    // console.log("should be listening")
     $(document).ready(function(){
-      console.log("Listening")
+      // console.log("Listening")
 
      
 
       $("#Title").click(function(){
-        console.log("clicked dropdown")
+        // console.log("clicked dropdown")
         $("#DropDownList").slideToggle()
       })
       
@@ -50,7 +50,7 @@ export class UpdateAirpsComponent implements OnInit {
   getData(id: any){
     const tempObservable = this._httpService.getSingleAction(id)
     tempObservable.subscribe(data=>{
-      console.log("data", data)
+      console.log("data", data[0])
       this.currentAction = data[0]
     })
   }
@@ -96,27 +96,27 @@ export class UpdateAirpsComponent implements OnInit {
       }
     }
 
-    console.log(result, " with ", option)
-    console.log("inside option", this.currentAction[option])
-    console.log("inside result", this.currentAction[option][result])
+    // console.log(result, " with ", option)
+    // console.log("inside option", this.currentAction[option])
+    // console.log("inside result", this.currentAction[option][result])
 
     if(this.currentAction[option][result]){
       const tempObservable = this._httpService.updateAction(this.currentAction._id, this.currentAction)
       tempObservable.subscribe(data=>{
-        console.log("updated current schema")
+        // console.log("updated current schema")
         this.getData(this.currentAction[option][result])
       })
     }else {
       const tempObservable = this._httpService.newAction()
       tempObservable.subscribe(data1=>{
-        console.log("made new action")
-        console.log('data1', data1)
+        // console.log("made new action")
+        // console.log('data1', data1)
         this.currentAction[option][result] = data1["_id"]
-        console.log('to be updated', this.currentAction)
+        // console.log('to be updated', this.currentAction)
         const tempObs2 = this._httpService.updateAction(this.currentAction._id, this.currentAction)
         tempObs2.subscribe(data2=>{
-          console.log("added action to parent")
-          console.log("data2", data2)
+          // console.log("added action to parent")
+          // console.log("data2", data2)
           this.getData(data1['_id'])
         })
       })
@@ -221,19 +221,19 @@ export class UpdateAirpsComponent implements OnInit {
   }
 
   submit(){
-    console.log("Got to submit")
+    // console.log("Got to submit")
     this.resetbuttons();
     this.getNext(this.UserChoice, this.OppChoice)
   }
 
   reset(){
-    console.log("Got to reset")
+    // console.log("Got to reset")
     this.resetbuttons()
     this.getData("5baa7c16a5f5161764025e59")
   }
 
   return(){
-    console.log("tapped return")
+    // console.log("tapped return")
     this._router.navigate(['/'])
   }
 

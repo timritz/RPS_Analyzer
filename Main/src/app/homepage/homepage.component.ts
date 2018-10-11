@@ -21,9 +21,9 @@ export class HomepageComponent implements OnInit {
   ngOnInit() {
     console.log("should be listening")
     $(document).ready(function(){
-      console.log("Listening")
+      // console.log("Listening")
       $("#Title").click(function(){
-        console.log("clicked dropdown")
+        // console.log("clicked dropdown")
         $("#DropDownList").slideToggle()
       })
     })
@@ -35,22 +35,22 @@ export class HomepageComponent implements OnInit {
   }
 
   swipeLeft(){
-    console.log("Swiped left")
+    // console.log("Swiped left")
     this._router.navigate(['/play'])
   }
 
   swipeRight(){
-    console.log("Swiped right")
+    // console.log("Swiped right")
     this._router.navigate(['/ask'])
   }
 
   tapUpdate(){
-    console.log("Tap Update")
+    // console.log("Tap Update")
     this._router.navigate(['/update'])
   }
 
   tapStats(){
-    console.log("Tap Stats")
+    // console.log("Tap Stats")
     this._router.navigate(['/stats'])
   }
   

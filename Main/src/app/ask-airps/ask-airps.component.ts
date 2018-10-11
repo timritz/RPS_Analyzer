@@ -39,14 +39,14 @@ export class AskAirpsComponent implements OnInit {
     this.scissorsStyle = "transparent"
     this.bestOption = true;
 
-    console.log("should be listening")
+    // console.log("should be listening")
     $(document).ready(function(){
-      console.log("Listening")
+      // console.log("Listening")
 
      
 
       $("#Title").click(function(){
-        console.log("clicked dropdown")
+        // console.log("clicked dropdown")
         $("#DropDownList").slideToggle()
       })
       
@@ -63,7 +63,7 @@ export class AskAirpsComponent implements OnInit {
   getData(id: any){
     const tempObservable = this._httpService.getSingleAction(id)
     tempObservable.subscribe(data=>{
-      console.log("data", data)
+      console.log("data", data[0])
       this.currentAction = data[0]
       this.bestOption = null;
       this.rockStyle = "transparent"
@@ -74,29 +74,29 @@ export class AskAirpsComponent implements OnInit {
   }
 
   getNext(option: any, result: any){
-    console.log(result, " with ", option)
+    // console.log(result, " with ", option)
     this.turnBeginning = false;
 
-    console.log("inside option", this.currentAction[option])
-    console.log("inside result", this.currentAction[option][result])
+    // console.log("inside option", this.currentAction[option])
+    // console.log("inside result", this.currentAction[option][result])
 
     if(this.currentAction[option][result]){
       const tempObservable = this._httpService.updateAction(this.currentAction._id, this.currentAction)
       tempObservable.subscribe(data=>{
-        console.log("updated current schema")
+        // console.log("updated current schema")
         this.getData(this.currentAction[option][result])
       })
     }else {
       const tempObservable = this._httpService.newAction()
       tempObservable.subscribe(data1=>{
-        console.log("made new action")
-        console.log('data1', data1)
+        // console.log("made new action")
+        // console.log('data1', data1)
         this.currentAction[option][result] = data1["_id"]
-        console.log('to be updated', this.currentAction)
+        // console.log('to be updated', this.currentAction)
         const tempObs2 = this._httpService.updateAction(this.currentAction._id, this.currentAction)
         tempObs2.subscribe(data2=>{
-          console.log("added action to parent")
-          console.log("data2", data2)
+          // console.log("added action to parent")
+          // console.log("data2", data2)
           this.getData(data1['_id'])
         })
       })
@@ -143,7 +143,7 @@ export class AskAirpsComponent implements OnInit {
     const RockSum = this.currentAction.rock.wins + this.currentAction.rock.losses + this.currentAction.rock.ties
     const PaperSum = this.currentAction.paper.wins + this.currentAction.paper.losses + this.currentAction.paper.ties
     const ScissorsSum = this.currentAction.scissors.wins + this.currentAction.scissors.losses + this.currentAction.scissors.ties
-    console.log("Are we random? ", (RockSum == 0 || PaperSum ==0 || ScissorsSum == 0))
+    // console.log("Are we random? ", (RockSum == 0 || PaperSum ==0 || ScissorsSum == 0))
     if(RockSum == 0 || PaperSum ==0 || ScissorsSum == 0){
       this.bestOption = false;
     }else {
@@ -182,14 +182,14 @@ export class AskAirpsComponent implements OnInit {
   }
 
   reset(){
-    console.log("Got to reset")
+    // console.log("Got to reset")
     this.getData(this.intialOptionId)
     this.turnBeginning = true;
     this.pickedAction = null;
   }
 
   return(){
-    console.log("swiped left")
+    // console.log("swiped left")
     this._router.navigate(['/'])
  
   }
